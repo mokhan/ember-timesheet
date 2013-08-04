@@ -13,4 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require timesheet
+
+// for more details see: http://emberjs.com/guides/application/
+Timesheet = Ember.Application.create();
+
 //= require_tree .
