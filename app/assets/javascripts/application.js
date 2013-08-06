@@ -20,6 +20,8 @@
 //= require timesheet
 
 // for more details see: http://emberjs.com/guides/application/
-Timesheet = Ember.Application.create();
+Timesheet = Ember.Application.create({
+  LOG_TRANSITIONS: true
+});
 
 //= require_tree .
