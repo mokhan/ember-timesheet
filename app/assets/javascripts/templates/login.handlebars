@@ -2,6 +2,11 @@
 <h3>Login</h3>
 <form action="" method="get" accept-charset="utf-8" class="form-horizontal">
   <div class="control-group">
-    <input type="text" name="username" id="" value="" />
+    <label for="email"></label>
+    <input type="text" name="email" id="email" value="" />
+
+    <label for="password"></label>
+    <input type="text" name="password" id="password" value="" />
   </div>
+  <button {{ action 'login' }}>login</button>
 </form>
