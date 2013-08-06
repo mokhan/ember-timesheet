@@ -3,10 +3,10 @@
 <form action="" method="get" accept-charset="utf-8" class="form-horizontal">
   <div class="control-group">
     <label for="email"></label>
-    {{view Ember.TextField valueBinding="email"}}
+    {{input type="text" value=email}}
 
     <label for="password"></label>
-    {{view Ember.TextField valueBinding="password" type="password"}}
+    {{input type="password" value=password}}
   </div>
   <button {{ action 'login' }}>login</button>
 </form>
