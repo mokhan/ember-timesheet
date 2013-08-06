@@ -21,7 +21,12 @@
 
 // for more details see: http://emberjs.com/guides/application/
 Timesheet = Ember.Application.create({
-  LOG_TRANSITIONS: true
+  LOG_TRANSITIONS: true,
+  LOG_VIEW_LOOKUPS: true,
+  LOG_ACTIVE_GENERATION: true,
 });
+Ember.LOG_BINDING = true;
+Ember.ENV.RAISE_ON_DEPRECATION = true;
+Ember.LOG_STACKTRACE_ON_DEPRECATION = true;
 
 //= require_tree .
