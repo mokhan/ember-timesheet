@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     {{controller}}
-    <h1>Welcome to {{applicationName}}!</h1>
+    {{#linkTo 'index'}}{{applicationName}}{{/linkTo}}
     <h2>{{title}}</h2>
     {{outlet}}
   </div>
