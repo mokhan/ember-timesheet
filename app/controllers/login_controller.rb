@@ -1,5 +1,4 @@
 class LoginController < ApplicationController
-
   def create
     email = params[:email]
     if email == 'mo@example.com' && params[:password] == 'password'
