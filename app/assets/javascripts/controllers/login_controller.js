@@ -7,7 +7,7 @@ Timesheet.LoginController = Ember.Controller.extend({
     .then(function(){
       console.log('login SUCCESS');
       this.set('isProcessing', false);
-      document.location = "/dashboard";
+      document.location = "#/timesheets";
     }.bind(this), function(){
       console.log('login FAIL');
       this.set('isProcessing', false);
