@@ -35,16 +35,9 @@ Ember.Application.initializer({
   name: 'currentUser',
 
   initialize: function(container) {
-    //Timesheet.deferReadiness();
-    //console.log('initializing...');
-    //Timesheet.Session.find('current').then(function(user){
-      //console.log(user);
-      //container.register('controller:currentUser', Timesheet.CurrentUserController, { singleton: true });
-      //container.lookup('controller:currentUser').set('model', user);
-      //container.typeInjection('controller', 'currentUser', 'controller:currentUser');
-      //Timesheet.advanceReadiness();
-    //}, function() {
-      //Timesheet.advanceReadiness();
-    //});
+    var store = container.lookup('store:main');
+    var user = Timesheet.Session.find('current');
+    container.lookup('controller:currentUser').set('model', user);
+    container.typeInjection('controller', 'currentUser', 'controller:currentUser');
   }
 });

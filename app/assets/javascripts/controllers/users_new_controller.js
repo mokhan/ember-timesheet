@@ -1,16 +1,16 @@
 Timesheet.UsersNewController = Ember.ObjectController.extend({
+  needs: ['currentUser'],
+
   register: function(){
-    var self = this;
     var user = this.get('model');
     user.set('password_confirmation', user.get('password'));
     this.get('model').save().then(function(){
-      self.transitionToRoute('index');
-    }.bind(this), function(){
-      console.log("oops..");
+      this.get('controllers.currentUser').set('model', this.get('model'));
+      this.transitionToRoute('index');
     }.bind(this));
   },
   cancel: function () {
     this.get('model').deleteRecord();
-    self.transitionToRoute('index');
+    this.transitionToRoute('index');
   }
 });

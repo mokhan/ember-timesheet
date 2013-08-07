@@ -12,13 +12,12 @@ class SessionsController < ApplicationController
   end
 
   def show
-    #user = current_user
-    #if user
-      #render json: { user: { id: user.id, email: user.email } }
-    #else
-      #render nothing: true, :status => :unauthorized
-    #end
-    respond_with current_user
+    user = current_user
+    if user
+      render json: { session: { id: user.id, email: user.email } }
+    else
+      render nothing: true, :status => :unauthorized
+    end
   end
 
   def destroy
