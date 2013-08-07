@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     user = User.find_by(:email => params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      render json: { session: { id: user.id, email: user.email }, status: :created }
+      render json: { session: { id: user.id, email: user.email } }
     else
       render :nothing => true, :status => :unauthorized
     end

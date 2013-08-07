@@ -1,20 +1,19 @@
-Timesheet.SessionsNewController = Ember.Controller.extend({
-  needs: ['currentUser'],
-
+Timesheet.SessionsNewController = Ember.ObjectController.extend({
   login: function(){
     this.setProperties({ loginFailed: false, isProcessing: true});
-    //$.post("/login", { email: this.get('email'), password: this.get('password') })
     this.get('model').save().then(function(data){
+      console.log('SUCCESS');
       this.set('isProcessing', false);
-      //document.location = "#/timesheets";
       var userJSON = this.get('model').toJSON();
       userJSON.id = 'current';
       var object = this.store.load(Timesheet.User, userJSON);
       var user = Timesheet.User.find('current');
 
-      this.get('controllers.currentUser').set('model', user);
-      this.transitionToRoute('dashboard');
+      console.log('setting current user');
+      this.get('currentUser').set('model', user);
+      this.transitionToRoute('index');
     }.bind(this), function(data){
+      console.log('FAIL');
       this.set('isProcessing', false);
       this.set('loginFailed', true);
     }.bind(this));
