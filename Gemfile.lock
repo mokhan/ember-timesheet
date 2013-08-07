@@ -33,6 +33,7 @@ GEM
       ember-source
       execjs
       handlebars-source
+    bcrypt-ruby (3.0.1)
     builder (3.1.4)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
@@ -128,6 +129,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 4.0.0)
   ember-rails
   ember-source (= 1.0.0.rc6.4)

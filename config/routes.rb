@@ -1,5 +1,5 @@
 Timesheet::Application.routes.draw do
   root 'home#index'
-  resources :users
-  post 'login' => 'login#create'
+  resources :users, only: [:index, :create]
+  resources :sessions, only: [:create, :show, :destroy]
 end

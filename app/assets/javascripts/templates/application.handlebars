@@ -3,6 +3,14 @@
     {{controller}}
     {{#linkTo 'index'}}{{applicationName}}{{/linkTo}}
     <h2>{{title}}</h2>
+    {{currentUser.user}}
+    {{#if currentUser.isSignedIn}}
+      Logged in as {{currentUser.email}}
+      {{#linkTo 'sessions.destroy'}}Logout{{/linkTo}}
+    {{else}}
+      {{#linkTo 'users.new'}}Sign Up{{/linkTo}} |
+      {{#linkTo 'sessions.new'}}Login{{/linkTo}}
+    {{/if}}
     {{outlet}}
   </div>
 </div>

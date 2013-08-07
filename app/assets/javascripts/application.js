@@ -22,11 +22,29 @@
 // for more details see: http://emberjs.com/guides/application/
 Timesheet = Ember.Application.create({
   LOG_TRANSITIONS: true,
-  LOG_VIEW_LOOKUPS: true,
-  LOG_ACTIVE_GENERATION: true,
+  //LOG_TRANSITIONS_INTERNAL: true,
+  //LOG_VIEW_LOOKUPS: true,
+  //LOG_ACTIVE_GENERATION: true,
 });
 Ember.LOG_BINDING = true;
 Ember.ENV.RAISE_ON_DEPRECATION = true;
 Ember.LOG_STACKTRACE_ON_DEPRECATION = true;
 
 //= require_tree .
+Ember.Application.initializer({
+  name: 'currentUser',
+
+  initialize: function(container) {
+    //Timesheet.deferReadiness();
+    //console.log('initializing...');
+    //Timesheet.Session.find('current').then(function(user){
+      //console.log(user);
+      //container.register('controller:currentUser', Timesheet.CurrentUserController, { singleton: true });
+      //container.lookup('controller:currentUser').set('model', user);
+      //container.typeInjection('controller', 'currentUser', 'controller:currentUser');
+      //Timesheet.advanceReadiness();
+    //}, function() {
+      //Timesheet.advanceReadiness();
+    //});
+  }
+});
