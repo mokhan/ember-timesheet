@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Timesheet::Application.load_tasks
+Clockwork::Application.load_tasks
