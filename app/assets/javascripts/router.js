@@ -8,5 +8,7 @@ App.Router.map(function() {
     this.route('new');
     this.route('destroy');
   });
+  this.resource('timesheets', function() {
+  });
 });
 
