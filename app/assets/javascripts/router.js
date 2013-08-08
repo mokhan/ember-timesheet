@@ -1,6 +1,6 @@
 // For more information see: http://emberjs.com/guides/routing/
 
-Timesheet.Router.map(function() {
+App.Router.map(function() {
   this.resource('users', function() {
     this.route('new');
   });

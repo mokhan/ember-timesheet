@@ -1,4 +1,4 @@
-Timesheet.SessionsNewController = Ember.ObjectController.extend({
+App.SessionsNewController = Ember.ObjectController.extend({
   login: function(){
     this.setProperties({ loginFailed: false, isProcessing: true});
     this.get('model').save().then(function(data){

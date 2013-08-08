@@ -1,4 +1,4 @@
-Timesheet.ApplicationController = Ember.Controller.extend({
+App.ApplicationController = Ember.Controller.extend({
   needs: ['currentUser'],
   applicationName: 'Timesheets App'
 });

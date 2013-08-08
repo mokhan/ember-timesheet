@@ -20,7 +20,7 @@
 //= require timesheet
 
 // for more details see: http://emberjs.com/guides/application/
-Timesheet = Ember.Application.create({
+App = Ember.Application.create({
   LOG_TRANSITIONS: true,
   //LOG_TRANSITIONS_INTERNAL: true,
   //LOG_VIEW_LOOKUPS: true,
@@ -36,7 +36,7 @@ Ember.Application.initializer({
 
   initialize: function(container) {
     var store = container.lookup('store:main');
-    var user = Timesheet.Session.find('current');
+    var user = App.Session.find('current');
     container.lookup('controller:currentUser').set('model', user);
     container.typeInjection('controller', 'currentUser', 'controller:currentUser');
   }

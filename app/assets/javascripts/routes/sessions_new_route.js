@@ -1,5 +1,5 @@
-Timesheet.SessionsNewRoute = Ember.Route.extend({
+App.SessionsNewRoute = Ember.Route.extend({
   model: function(){
-    return Timesheet.Session.createRecord();
+    return App.Session.createRecord();
   }
 });

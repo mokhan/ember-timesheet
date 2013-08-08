@@ -1,4 +1,4 @@
-Timesheet.UsersNewController = Ember.ObjectController.extend({
+App.UsersNewController = Ember.ObjectController.extend({
   needs: ['currentUser'],
 
   register: function(){
