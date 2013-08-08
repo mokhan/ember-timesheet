@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :email, presence: true, uniqueness: true
   after_create :create_auth_token
+  has_many :timesheets
 
   private
 
