@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     user = User.find_by(:email => params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      render json: { session: { id: user.id, email: user.email } }
+      render json: user, serializer: SessionSerializer
     else
       render :nothing => true, :status => :unauthorized
     end
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   def show
     user = current_user
     if user
-      render json: { session: { id: user.id, email: user.email } }
+      render json: user, serializer: SessionSerializer
     else
       render nothing: true, :status => :unauthorized
     end
