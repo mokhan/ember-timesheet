@@ -5,12 +5,7 @@ App.SessionsNewController = Ember.ObjectController.extend({
     this.get('model').save().then(function(data){
       this.set('isProcessing', false);
       this.get('currentUser').set('model', this.get('model'));
-      if (this.get('attemptedTransition')) {
-        this.get('attemptedTransition').retry();
-        this.set('attemptedTransition', null);
-      } else {
-        this.transitionToRoute('index');
-      }
+      this.redirectToNextPage();
     }.bind(this), function(data){
       this.setProperties({ loginFailed: true, isProcessing: false});
     }.bind(this));
@@ -19,5 +14,14 @@ App.SessionsNewController = Ember.ObjectController.extend({
   cancel: function(){
     this.get('model').deleteRecord();
     this.transitionToRoute('index');
+  },
+
+  redirectToNextPage: function(){
+    if (this.get('attemptedTransition')) {
+      this.get('attemptedTransition').retry();
+      this.set('attemptedTransition', null);
+    } else {
+      this.transitionToRoute('index');
+    }
   }
 });
