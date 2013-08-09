@@ -6,7 +6,7 @@ App.UsersNewController = Ember.ObjectController.extend({
     user.set('password_confirmation', user.get('password'));
     this.get('model').save().then(function(){
       this.get('controllers.currentUser').set('model', this.get('model'));
-      this.transitionToRoute('index');
+      this.transitionToRoute('timesheets');
     }.bind(this));
   },
   cancel: function () {
