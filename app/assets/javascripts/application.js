@@ -30,6 +30,13 @@ Ember.LOG_BINDING = true;
 Ember.ENV.RAISE_ON_DEPRECATION = true;
 Ember.LOG_STACKTRACE_ON_DEPRECATION = true;
 
+Ember.Route.reopen({
+  activate: function() {
+    this._super();
+    document.title = this.routeName;
+  }
+});
+
 //= require_tree .
 Ember.Application.initializer({
   name: 'currentUser',
