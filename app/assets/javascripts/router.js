@@ -10,6 +10,7 @@ App.Router.map(function() {
   });
   this.resource('timesheets', function() {
     this.route('new');
+    this.resource('timesheet', { path: ':timesheet_id' });
   });
 });
 

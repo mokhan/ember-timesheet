@@ -10,7 +10,7 @@
     {{#each timesheet in controller}}
     <tr>
       <td>
-        {{#linkTo 'timesheets'}}{{timesheet.name}}{{/linkTo}}
+        {{#linkTo 'timesheet' timesheet}}{{timesheet.name}}{{/linkTo}}
       </td>
     </tr>
     {{/each}}
