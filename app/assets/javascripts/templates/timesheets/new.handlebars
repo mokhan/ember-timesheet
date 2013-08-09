@@ -1,0 +1,14 @@
+<h1>New Timesheet</h3>
+<form {{ action save on="submit" }}>
+  <div class="form-group">
+    <div class="form-group">
+      <label for="name" class="control-label">Name</label>
+      {{input type="name" value=name class="form-control" placeholder="Name"}}
+      <span class="help-block">
+        {{errors.name}}
+      </span>
+    </div>
+    <button type="submit" class="btn btn-default">Save</button>
+    <a href="#" {{ action cancel }} class="btn">cancel</a>
+  </div>
+</form>

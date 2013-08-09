@@ -9,6 +9,7 @@ App.Router.map(function() {
     this.route('destroy');
   });
   this.resource('timesheets', function() {
+    this.route('new');
   });
 });
 

@@ -1,1 +1,18 @@
 <h1>Timesheets</h1>
+{{#linkTo 'timesheets.new' class="btn btn-primary"}}new{{/linkTo}}
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each timesheet in controller}}
+    <tr>
+      <td>
+        {{#linkTo 'timesheets'}}{{timesheet.name}}{{/linkTo}}
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
