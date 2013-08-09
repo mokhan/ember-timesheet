@@ -1,21 +1,31 @@
-<h1>Register</h3>
-<form {{ action "register" on="submit" }}>
-  <div class="form-group">
-    <div class="form-group">
-      <label for="email" class="control-label">Email</label>
-      {{input type="email" value=email class="form-control" placeholder="Email"}}
-      <span class="help-block">
-        {{errors.email}}
-      </span>
-    </div>
-    <div class="form-group">
-      <label for="password" class="control-label">Password</label>
-      {{input type="password" value=password class="form-control" placeholder="password"}}
-      <span class="help-block">
-        {{errors.password}}
-      </span>
-    </div>
-    <button type="submit" class="btn btn-default">Register</button>
-    <a href="#" {{ action cancel }} class="btn">cancel</a>
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+    <form {{ action "register" on="submit" }}>
+      <fieldset>
+        <legend>Register</legend>
+        <div class="form-group">
+          <div class="form-group">
+            <label for="email" class="control-label">Email address</label>
+            {{input type="email" value=email class="form-control" placeholder="Email"}}
+            <span class="help-block">
+              {{errors.email}}
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="password" class="control-label">Password</label>
+            {{input type="password" value=password class="form-control" placeholder="password"}}
+            <span class="help-block">
+              {{errors.password}}
+            </span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-default">Register</button>
+        <button {{action cancel}} class="btn">Cancel</button>
+        or
+        {{#linkTo 'sessions.new'}}Login{{/linkTo}}
+      </fieldset>
+    </form>
   </div>
-</form>
+  <div class="col-lg-3"></div>
+</div>
