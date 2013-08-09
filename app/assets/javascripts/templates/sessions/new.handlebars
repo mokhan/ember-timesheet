@@ -4,7 +4,8 @@
     {{#if loginFailed}}
       <div class="alert">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>Warning!</strong> Best check yo self, you&rsquo;re email or password aint right.
+        <strong>Ooops!</strong> Your email or password aint right. Do you want to 
+        {{#linkTo 'users.new'}}register{{/linkTo}}?
       </div>
     {{/if}}
 
