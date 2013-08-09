@@ -43,7 +43,14 @@ Ember.Application.initializer({
 
   initialize: function(container) {
     var store = container.lookup('store:main');
-    var user = App.Session.find('current');
+    App.deferReadiness();
+    var user = App.Session.find('current')
+    user.then(function(model){
+      console.log("SIGNED IN " + model.get('email'));
+      App.advanceReadiness();
+    }, function(){
+      App.advanceReadiness();
+    });
     container.lookup('controller:currentUser').set('model', user);
     container.typeInjection('controller', 'currentUser', 'controller:currentUser');
   }
