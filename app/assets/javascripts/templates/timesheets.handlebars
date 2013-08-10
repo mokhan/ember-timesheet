@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1>Timesheets
+      <span>{{#linkTo 'timesheets.new' class="btn btn-default"}}new{{/linkTo}}</span>
+    </h1>
+    <hr />
+    <div class="col-lg-3">
+      <ul class="nav nav-pills nav-stacked">
+        {{#each timesheet in controller}}
+        <li> {{#linkTo 'timesheet' timesheet}}{{timesheet.name}}{{/linkTo}} </li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-lg-9">
+      {{outlet}}
+    </div>
+  </div>
+</div>

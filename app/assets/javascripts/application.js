@@ -23,8 +23,8 @@
 App = Ember.Application.create({
   LOG_TRANSITIONS: true,
   //LOG_TRANSITIONS_INTERNAL: true,
-  //LOG_VIEW_LOOKUPS: true,
-  //LOG_ACTIVE_GENERATION: true,
+  LOG_VIEW_LOOKUPS: true,
+  LOG_ACTIVE_GENERATION: true,
 });
 Ember.LOG_BINDING = true;
 Ember.ENV.RAISE_ON_DEPRECATION = true;

@@ -1,4 +1,4 @@
-App.TimesheetsIndexRoute = App.AuthenticatedRoute.extend({
+App.TimesheetsRoute = App.AuthenticatedRoute.extend({
   model: function(){
     return App.Timesheet.find();
   }
