@@ -1,18 +1,7 @@
 <div class="btn-toolbar">
   <div class="btn-group">
-    <button class="btn btn-default" type="button">+</button>
+    {{#linkTo 'entries.new' class="btn btn-default"}}+{{/linkTo}}
   </div>
   <h3 class='pull-right'> {{name}}</h3>
 </div>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Hours</th>
-      <th>Notes</th>
-      <th>Project</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
+{{outlet}}
