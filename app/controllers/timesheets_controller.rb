@@ -5,6 +5,11 @@ class TimesheetsController < ApplicationController
     respond_with current_user.timesheets
   end
 
+  def show
+    timesheet = current_user.timesheets.find(params[:id])
+    respond_with timesheet
+  end
+
   def create
     timesheet = current_user.timesheets.create(timesheet_params)
     render json: timesheet
