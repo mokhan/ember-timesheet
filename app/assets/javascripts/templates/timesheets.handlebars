@@ -1,15 +1,14 @@
 <div class="row">
   <div class="col-lg-12">
-    <h1>Timesheets
-      <span>{{#linkTo 'timesheets.new' class="btn btn-default"}}new{{/linkTo}}</span>
-    </h1>
-    <hr />
     <div class="col-lg-3">
-      <ul class="nav nav-pills nav-stacked">
+      <ul class="nav nav-pills nav-stacked well">
         {{#each timesheet in controller}}
         <li> {{#linkTo 'timesheet' timesheet}}{{timesheet.name}}{{/linkTo}} </li>
+        {{else}}
+        <li>{{#linkTo 'timesheets.new'}}Add Timesheet{{/linkTo}}</li>
         {{/each}}
       </ul>
+      {{#linkTo 'timesheets.new' class="btn btn-default"}}+{{/linkTo}}
     </div>
     <div class="col-lg-9">
       {{outlet}}

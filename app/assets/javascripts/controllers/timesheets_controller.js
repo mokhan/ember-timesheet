@@ -1,1 +1,4 @@
-App.TimesheetsController = Ember.ArrayController.extend({ });
+App.TimesheetsController = Ember.ArrayController.extend({ 
+  sortProperties: ['id'],
+  sortDescending: false
+});
